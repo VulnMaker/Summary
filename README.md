@@ -1,2 +1,2 @@
 # Summary
-This is my notes about the course that I've gone through
+This is my notes about from my experience that I've gone through.
