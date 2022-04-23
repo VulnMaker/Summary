@@ -1,0 +1,11 @@
+diffrent between cookie & sessions 
+	* cookies are stored on the client whereas session variables are on the server
+	* session variables expire with the session and sessions usually expire sooner than cookies do.
+
+cookie
+	* lower level subdomains can set cookies for higher domains , on the reverse side it can't be done
+	* if not domain value spaciphied the defult will be the only current domain and it's files
+		* Internet Explor will consider sending this cookie as if its domain value to all domains and sub related with it
+
+Sessions
+	* The session ID is assigned to the client by the webserver and the client will present this ID for each subsequent request in order to be recognized

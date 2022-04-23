@@ -1,0 +1,20 @@
+												Encoding
+
+named entity 
+	&+ named char refrence +; < = &lt;
+
+numaric decimal
+	&+ #+ D+ ; < = &#60;
+	D = a dicimal Num
+	there is a cases that encoding have no termonator (;) < = &#60
+	and another case add one or more zeros befor the code < = &#0000060  
+
+numaric hexdicimal
+	&+ #x+ H+; < = &#x3c;
+	H = an Hex Dicimal Num
+	No termonator (;) < = &#x3c
+	add one or more zeros befor the code < = &#0000000x3c
+
+	Base 36
+	
+	

@@ -1,0 +1,68 @@
+authentucation 
+	token based
+	cookie based
+
+api basics 
+	SOAP
+		send the request as onely xml format 
+	REST
+		use URIs Uniform Resource identifiers to address resources and dealing with too many formats
+
+basic definition 
+	Document
+		single database record "api.github.com/suers/Vulnmaker"
+	Collection
+		collection of resorces like "api.github.com/suers/Vulnmaker"
+	Store
+		clint-managed resource repository "PUT /users/1234/favorites/mango"
+	Controller
+		executable fun which cannot be mapped st standard CRUUD like "POST alerts/123/resend"
+
+finding endpoints 
+	go to google.com/api/application.wadl if the app is working with java app
+	go to google.com/api/developer-doc 
+	#csrf1
+	search in js files for the hidden endpoint
+	OPTION is your firend 
+	try to mak the contant-type type application/jason and insert empty body in the request {}
+	use XHR in the network tap in the inspect elemets to filter api request
+
+XXE 
+	 * XXE impact
+	 	* SSRF	
+	 	* Atrbitary File Read
+	 	* DOS
+	 	* RCE
+
+	 types
+	 	* viewable
+	 	* un-viewable
+	 methdology 
+ 		* fine end point
+		* check if the endpoint accept contant-type: application/xml text/xml
+ 		* check if we can use inernal entities
+ 		* check if we can use external entities using system keyword
+ 		* inject into viewable parametar
+
+sessions checklist
+	* check if session tocken expires on logout
+	* check if session tocken expires on password reset / change
+	* check if session tocken expires on user removal
+	* check if session tocken expires on changing roles
+
+pervilage esclation
+	* types
+	 	* horizontal
+	 	* vertical privilege escalation
+	 	
+	* methdology 
+	 	* identify endpoints
+	 	* identify roles and privacy settings
+	 	* try privilege escalation
+CORS
+	* make suer the allow credentials is true
+	* you can borrow the api key when you exploit it  
+CSRF
+	* if there is no anti csrf tocken exploit it
+	* test if the anti csrf tocken could bypass by remove it or send empty tocken or send random tocken with the same lenth test every one of this as get and post request
+	* if the website is making an system for the user and there is a page to delete it you can make csrf request to the delete page with an image tag	

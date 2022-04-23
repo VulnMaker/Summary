@@ -1,0 +1,6 @@
+password change
+	if the admin could change the password without enter current password then if the server dosn't verify who send the request it could be CSRF by removing current password flag
+
+shoping process
+	if for deliviring orders have to follow steps try to skip some steps like jump from finalize order to delever details without enter payment details
+

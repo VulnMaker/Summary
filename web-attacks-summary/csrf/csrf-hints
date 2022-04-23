@@ -1,0 +1,8 @@
+the website is vurnable csrf if 
+
+* have no validate token
+* use the same validation token for the request
+* the token is so small
+* the server don't validate on the token 
+* the server pass the erreors like send token[] like an array 
+* if the the server is validate on the referer and the method could send as GET we can spoof it

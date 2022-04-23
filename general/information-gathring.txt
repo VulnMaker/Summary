@@ -1,0 +1,3 @@
+* whois
+	* tool (root:~#whois starbucks.com)
+	* web-interface (https://whois.domaintools.com/)

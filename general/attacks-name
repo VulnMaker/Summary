@@ -1,0 +1,123 @@
+tools list 
+
+
+parameter bruteforce
+
+subdomain
+	subdomain-takeover => ostel sub bruteforcer
+	dir bruteforce
+	param-bruteforce => parameth
+
+look for js
+search older contant 
+revers whois
+online vuln searcher
+
+sqli practs
+sqli toturial
+sqli reports
+
+xss practs
+xss toturial
+xss reports
+
+bruteforce reports
+
+stealing acess token reports
+
+google oauth bypass report
+
+csrf reports
+
+rce reports
+
+*deserialization reports
+
+*image tragic reports
+
+IDOR reports
+
+XXE reports
+
+Unrestricted File Upload reports
+
+SSRF reports
+
+race condation reports
+
+business logic flaw reports
+
+Authentication Bypass reports
+
+HTTP Header Injection reports
+
+Subdomain Takeover reports
+
+*Author Write Up
+
+XSSI
+
+*Email Related
+
+*Money Stealing
+
+Local File Inclusion
+
+CSV Injection :
+
+CRLF: (Carriage Return line feed)
+
+Host header injection :
+
+Cache poisoning
+
+Web parameter tampering :
+
+*Express Lang injection:
+
+HTML Injection
+
+Blind XPATH Injection:-
+
+*LDAP Injection:-
+
+OS Command Injection
+
+*SOP Bypass
+
+*UI redressing attack & Clickjacking :
+
+Session Fixation :
+
+*Missing http only
+
+*Error Message Reveals sensitive Information/ Visible Detailed Error/Debug Page
+
+Token Leakage via Referrer
+
+User Enumeration:
+
+CSS Injection :
+
+Miscellaneous
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
