@@ -1,0 +1,52 @@
+Description:
+git is version control tool that is connected to GtiHub web application.
+
+#common command
+git clone -> donload the repo
+git puch origin master -> Upload the code to the remote repo
+git pull -> Download changes of the remote repo
+
+#dealing with current repo 
+git status -> to monitor the changes you made
+git add . -> track the files changes into git, add . for all the files or the name of the file 
+git commit -m "title" -m "Description" -> add comments to the changes first -m for the title and the secound for the Description
+git puch origin master -> Upload the code to the master repo
+
+#create new repo
+git init -> to inital new git repo to GtiHub
+git remote add origin git@github.com/path/tothefile.git -> add a refrance to the remote repo
+git remote -v -> to see all the repo that we are connected application
+
+#git branching
+1. branch will see only his commints
+2. all changes that in the master branch can not be seen in the brach till you merge it
+3. more like sandbox you use to add new features and do not want to merge it to the master till it finished or bug want to fix
+--
+git branch -> to see the bracnhes you have
+git checkout -b brachname/specifics -> to create new branch
+git checkout master -> to switch to the deiffrent branches
+git diff name/of/the/brach -> show the diffrent between the two version of the code
+git puch --set-upstream origin branch/name -> to upload to the branch
+git merge master -> to merge with the master brach
+git brach -d name-of-brach -> to delete the branch
+
+#undoing in git
+git reset -> back to the old version if you use git add, you can use it without any argument to undo all the file or you can
+            specify a file name
+git reset HEAD~1 -> undo commit and 1 refer to the last commit and you can increase it as many as you want.
+git log -> give you the log for all the commit, you can back to certin commit by using git reset "the hash of the file"
+git reset --hard asdasdfjaslkdjaslijdas -> to back to certin commit and delete all the commit after it.
+
+#fork
+1. fork is to make a copy of the project to your own profile
+2. you can make fork for any project and the fork will be wit all the braches of it.
+3. you can make a huge diffrent to the repo and ask the owner to merge it
+
+#SSH in GtiHub
+
+generate the SSH key with the following command (ssh-keygen -t ed25519 -C "your_email@example.com")
+pbcopy < filename.pub -> to copy the content of the file
+then we add it to the SSH key in github profile 
+*note that we add the public key to github and we use the private one for verifing 
+*the SSH key saved in the home dir in the following path ~/.ssh/id_ras
+*adding the ssh key to the git with the following command (ssh-add ~/.ssh/id_ed25519)
