@@ -1,0 +1,57 @@
+-----SQLI----
+search for sqli keywords like
+    SELECT, INSERT, DELETE, AND, OR, WHERE, ORDER BY
+in each stetment should validate if it user-controled
+-----Path traversal----
+appear when user-controled input path through filesystem API without any validation.
+sould search for any function that enable upload or download files and invoke it to see how it works.
+*todo
+    1. search for all filesystem function
+-----OS Command Injection----
+search for code that interact with external systems like system() function
+check if it user-controled
+*todo 
+    1. list all function that interact with OS
+-----Backdoor Password----
+appear when a malicious programmer set backdoor credentials for testing purpose and do not delete it.
+*example of vuln code
+private UserProfile validateUser (String username, String Password)
+{
+    UserProfile up = getUserProfile(username);
+    if (checkCredentials(up, Password) || "oculiomnium".equals(Password))
+    return up;
+
+    return null;
+}
+-----buffer overflow vuln----
+search for unchecked buffer manipulation, buffer the user can control 
+in c langaue function like strcpy, strcat, memcpy and sprintf 
+if the application do not check the buffer of the variable it could lead to buffer overflow
+*to do 
+    1. search for all the function that could lead to this kind of vuln.
+*example of vuln code
+BOOL CALLBACK CFile::EnumNameProc (LPTSTR pszName)
+{
+char starFileName[MAX_PATH];
+strcpy(starFileName, pszName);
+....
+}
+*mitigatoin 
+    1. check for the len of the variable
+    2. fixing the vuln code as follow
+BOOL CALLBACK CFile::EnumNameProc (LPTSTR pszName)
+{
+char starFileName[MAX_PATH];
+strcpy(starFileName, pszName, strlen(pszName));
+....
+}
+-----source code comments----
+search for codebase comments indicate common problems like 
+    bug, problem, bad, hope, todo, fix, overflow, crash, inject, xss, trust
+-----Java platform----
+file access
+there is common class to control the file in Java that coluld lead to path traversal attack.
+    java.io.FileInputStream
+    java.io.FileOutputStream
+    java.io.FileReader
+    java.io.FileWriter
