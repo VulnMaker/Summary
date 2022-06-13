@@ -36,6 +36,7 @@ git reset -> back to the old version if you use git add, you can use it without 
 git reset HEAD~1 -> undo commit and 1 refer to the last commit and you can increase it as many as you want.
 git log -> give you the log for all the commit, you can back to certin commit by using git reset "the hash of the file"
 git reset --hard asdasdfjaslkdjaslijdas -> to back to certin commit and delete all the commit after it.
+git log -p -> git all the details of the old versions
 
 #fork
 1. fork is to make a copy of the project to your own profile
