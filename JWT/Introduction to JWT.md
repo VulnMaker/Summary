@@ -12,6 +12,8 @@ At first let's distinguish first between (JWT, JWS, JWE, JWK, JWA) and take a de
 
 Json Web Token is a URL safe compact cliams represented and encoded as Json objects that is used after that as payload to the JWS (Json Web Singnature) & JWE (Json Web Encryption) for enabling them to digitally sign it or integraty protect it using MAC (Message Authentication Code) and/or encypted. [`2`](#Refrences)
 
+> More Information about MAC (Intro to MAC)[MAC & PGP: Secure Messageing/MAC (Message Authentication Code).md]
+
 
 # Refrences
 1. Introduction to JWT, JWS, JWE, JWA and JWK https://codecurated.com/blog/introduction-to-jwt-jws-jwe-jwa-jwk/
