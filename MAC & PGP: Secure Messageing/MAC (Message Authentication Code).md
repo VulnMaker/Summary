@@ -13,13 +13,17 @@ The purpose of using MAC is to ensure the integraty and the Authenticity not con
 ## MAC Elements
 
 Message         : The message you want to send.
+
 Key             : The Key that the MAC algorithm will use to create the MAC Value.
+
 MAC Algorithm   : The Symatric algorism used in the process.
-MAC Value       : The Ciphertext + Message
+
+MAC Value       : The Ciphertext + Message.
+
 
 > The MAC Process require the shared key is established already in the both party before starting the process.
 
-![MAC Process without encryption](![MAC Process without encryption](https://media.geeksforgeeks.org/wp-content/uploads/MAC-without-encryption.png))
+![MAC Process without encryption!](https://media.geeksforgeeks.org/wp-content/uploads/MAC-without-encryption.png)
 
 ## When we
 
